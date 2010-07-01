@@ -1,0 +1,45 @@
+#
+#  linux/arch/arm/mach-pxa/imm/Kconfig
+#
+#  Intel Memory Management
+#
+#  Module defines and configs
+#
+#  Todd Brandt
+#  Copyright (c) 2004, Intel Corporation (todd.e.brandt@intel.com)
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License version 2 as
+#  published by the Free Software Foundation.
+#
+
+# (C) Copyright 2006 Marvell International Ltd.  
+# All Rights Reserved 
+
+menu "Marvell(R) Wireless Memory Management Technology"
+depends on ARCH_PXA
+
+config IMM
+	bool "Marvell(R) Wireless Memory Management Support"
+	depends on ARCH_PXA
+	help
+	  If you say Y here, the Intel Memory Management device will be
+	  built into the kernel. IMM supplies specialized optimizations
+	  for Intel XScale based processors.
+
+config IMM_DEBUG
+	bool "Debug Info"
+	depends on IMM
+	help
+	  If you say Y here, IMM will print lots and lots of irritating
+	  debug messages.
+
+config IMM_API_SRAM
+	bool "SRAM Allocation API"
+	depends on IMM && PROFILING
+	help
+	  If you say Y here, IMM will provide an API to applications 
+	  and drivers allowing them to allocate internal SRAM.
+
+endmenu
+
