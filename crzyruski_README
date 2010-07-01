@@ -1,0 +1,25 @@
+07/01/2010, crzyruski@gmail.com - first commit and instructions to compile:
+
+default config file is located here: arch/arm/configs/X2_V4_REL_defconfig
+
+1. copy default config to root kernel source
+2. rename to .config
+3. set environment variables! (arm-eabi toolchain can be found in AOSP repo)
+
+EXAMPLE:
+
+export CCOMPILER=/media/Android_dev/Donut_AOSP/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin/arm-eabi-
+
+4. setup kernel config
+
+EXAMPLE:
+
+make ARCH=arm CROSS_COMPILE=$CCOMPILER menuconfig
+
+
+-------------------------------------------------
+NOTE: If you plan to patch kernel, first CLEAN!
+
+EXAMPLE:
+
+make ARCH=arm CROSS_COMPILE=$CCOMPILER clean
